@@ -2,5 +2,5 @@
 
 Example of ASP.NET 4.x app in a Windows docker container
 
-http://anthonychu.ca/post/dockerizing-aspnet-4.x-windows-containers
+http://anthonychu.ca/post/dockerizing-aspnet-4x-windows-containers
 
