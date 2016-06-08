@@ -1,0 +1,4 @@
+Dockerfile
+**/bin/
+**/obj/
+**/packages/
