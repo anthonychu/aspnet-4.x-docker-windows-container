@@ -10,11 +10,6 @@ RUN powershell add-windowsfeature web-asp-net45 \
     && choco install nuget.commandline -y \
     && nuget install MSBuild.Microsoft.VisualStudio.Web.targets -Version 14.0.0.3 \
 	&& nuget install WebConfigTransformRunner -Version 1.0.0.1
-  
-#RUN powershell remove-item C:\inetpub\wwwroot\iisstart.*
-
-RUN powershell Clear-WebConfiguration //DefaultDocument/Files -PSPath IIS:\ \
-   && powershell Add-WebConfiguration //DefaultDocument/Files IIS:\ -atIndex 0 -Value @{value='default.aspx'}
 
 # Copy files
 RUN md c:\build
