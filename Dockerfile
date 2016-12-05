@@ -23,4 +23,6 @@ RUN nuget restore \
     && "c:\Program Files (x86)\MSBuild\14.0\Bin\MSBuild.exe" /p:Platform="Any CPU" /p:VisualStudioVersion=12.0 /p:VSToolsPath=c:\MSBuild.Microsoft.VisualStudio.Web.targets.14.0.0.3\tools\VSToolsPath DockerDemo.sln \
     && xcopy c:\build\DockerDemo\* c:\inetpub\wwwroot /s
 
-ENTRYPOINT powershell .\InitializeContainer
+CMD powershell .\InitializeContainer; \
+	Write-Host IIS Started... ; \
+    while ($true) { Start-Sleep -Seconds 3600 }
